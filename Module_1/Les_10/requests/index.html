@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Новые заявки</title>
+    <style>
+        .request {
+            margin-top: 10px;
+            padding: 10px;
+            border: 2px solid #c4b5fd;
+        }
+
+        .request.urgent {
+            border-color: #dc2626;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Новые заявки</h1>
+    <form id="request-form">
+        <label for="title">Заголовок</label>
+        <input id="title" name="title" value="Починить вход">
+        <label><input type="checkbox" name="urgent"> Срочная</label>
+        <button type="submit">Добавить заявку</button>
+    </form>
+    <section id="request-list"></section>
+    <script src="app.js"></script>
+</body>
+
+</html>

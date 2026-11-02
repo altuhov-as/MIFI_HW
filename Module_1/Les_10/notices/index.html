@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Уведомления</title>
+    <style>
+        #notice-list {
+            padding: 8px;
+            border: 2px solid #23116d;
+        }
+
+        .notice {
+            padding: 8px;
+            border: 2px solid #c4b5fd;
+        }
+
+        .notice.ready {
+            border-color: #6d28d9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Уведомления</h1>
+    <p id="notice-count">Уведомлений: 2</p>
+    <p id="empty-message">Уведомлений нет</p>
+    <ul id="notice-list">
+        <li class="notice">Заявка принята</li>
+        <li class="notice">Профиль обновлён</li>
+    </ul>
+    <script src="app.js"></script>
+</body>
+
+</html>
