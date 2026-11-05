@@ -35,3 +35,31 @@ button {
     color: #b42318;
     font-weight: 700;
 }
+
+.answer {
+    display: block;
+    margin: 0;
+}
+
+.answer label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#answer-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+}
+
+#answer-error,
+#answer-form button {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 600px) {
+    #answer-form {
+        grid-template-columns: 1fr;
+    }
+}
