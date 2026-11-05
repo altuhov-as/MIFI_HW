@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Викторина по веб-разработке</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="quiz-card">
+        <section id="start-screen">
+            <p class="eyebrow">Практика HTML · CSS · JavaScript</p>
+            <h1>Викторина по веб-разработке</h1>
+            <form id="start-form">
+                <p><label for="player-name">Как вас зовут?</label></p>
+                <p><input id="player-name" type="text" placeholder="Например, Маша"></p>
+                <p id="start-error" class="error"></p>
+                <button type="submit">Начать викторину</button>
+            </form>
+        </section>
+
+        <section id="quiz-screen" hidden>
+            <p id="progress" class="eyebrow"></p>
+            <h2 id="question">Какой метод округляет число до ближайшего целого?</h2>
+            <form id="answer-form">
+                <p class="answer"><label><input id="answer-input-0" type="radio" name="answer" value="0"> <span
+                            id="answer-0">Math.floor()</span></label></p>
+                <p class="answer"><label><input id="answer-input-1" type="radio" name="answer" value="1"> <span
+                            id="answer-1">Math.round()</span></label></p>
+                <p class="answer"><label><input id="answer-input-2" type="radio" name="answer" value="2"> <span
+                            id="answer-2">toFixed(2)</span></label></p>
+                <p id="answer-error" class="error"></p>
+                <button type="submit">Проверить ответ</button>
+            </form>
+        </section>
+
+        <section id="result-screen" hidden>
+            <p class="eyebrow">Викторина завершена</p>
+            <h2 id="result-title"></h2>
+            <p id="result-text" class="result"></p>
+            <p id="result-message"></p>
+            <button id="restart-button" type="button">Пройти ещё раз</button>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+
+</html>
