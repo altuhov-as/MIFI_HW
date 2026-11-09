@@ -8,6 +8,8 @@ import { calculateReport, validateQuizData } from './stats.js'
 
 
 // Готовая защитная механика. Не изменяйте эту функцию.
+
+// Данную функцию можно было экспортировать из app.js
 function escapeHtml(value) {
   return String(value)
     .replaceAll('&', '&amp;')
