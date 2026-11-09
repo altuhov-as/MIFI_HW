@@ -1,0 +1,1 @@
+console.log('Запущен preview.js')
