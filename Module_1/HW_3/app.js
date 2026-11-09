@@ -14,9 +14,6 @@ function selectAttempts(filter) {
 
   if (!window.reportData || !Array.isArray(window.reportData.attempts)) { return []; }
 
-  console.log(attempts)
-
-
   // Масштабируемость
   // Добавить новый фильтр (например, 'pending' или 'review') — дело одной новой строки case.
   switch (filter) {
