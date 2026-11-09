@@ -4,6 +4,8 @@ import { readFile, unlink, writeFile } from 'node:fs/promises'
 // затем добавьте импорт: import { calculateReport, validateQuizData } from './stats.js'
 
 const outputPath = './report.html'
+import { calculateReport, validateQuizData } from './stats.js'
+
 
 // Готовая защитная механика. Не изменяйте эту функцию.
 function escapeHtml(value) {
