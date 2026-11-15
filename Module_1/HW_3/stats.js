@@ -88,14 +88,14 @@ export function calculateReport(data) {
   )
 
   // averagePercentage — среднее по уже округлённым процентам
-  const sum = attempts.reduce((acc, a) => acc + a.percentage, 0)
-  const averagePercentage = Math.round(sum / attempts.length)
+  const sum = attempts.reduce((acc, a) => acc + a.percentage, 0);
+  const averagePercentage = Math.round(sum / attempts.length);
 
   // passedCount — число попыток с passed: true
-  const passedCount = attempts.filter(a => a.passed).length
+  const passedCount = attempts.filter(a => a.passed).length;
 
   // best — участник с максимальным percentage (при равенстве — первый)
-  let best = attempts[0]
+  let best = attempts[0];
   for (let i = 1; i < attempts.length; i++) {
     if (attempts[i].percentage > best.percentage) {
       best = attempts[i]
@@ -111,5 +111,5 @@ export function calculateReport(data) {
     threshold: PASSING_PERCENTAGE,
     best,
     attempts
-  }
+  };
 }

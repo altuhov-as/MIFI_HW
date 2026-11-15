@@ -2,12 +2,13 @@ import { readFile, unlink, writeFile } from 'node:fs/promises'
 
 // TODO после занятия про npm и модули: добавьте в package.json поле "type": "module",
 // затем добавьте импорт: import { calculateReport, validateQuizData } from './stats.js'
-
-const outputPath = './report.html'
 import { calculateReport, validateQuizData } from './stats.js'
 
+const outputPath = './report.html'
 
 // Готовая защитная механика. Не изменяйте эту функцию.
+
+// Данную функцию можно было экспортировать из app.js
 function escapeHtml(value) {
   return String(value)
     .replaceAll('&', '&amp;')
@@ -132,49 +133,49 @@ function fail(message) {
 }
 
 async function main() {
-  const inputPath = process.argv[2]
+  const inputPath = process.argv[2];
 
   if (!inputPath) {
     fail('Укажите путь к файлу данных')
     return
   }
 
-  await removePreviousReport()
+  await removePreviousReport();
 
   let raw
   try {
     raw = await readFile(inputPath, 'utf8')
   } catch (error) {
     if (error.code === 'ENOENT') {
-      fail('Файл не найден')
+      fail('Файл не найден');
     } else if (error.code === 'EACCES') {
-      fail('Ошибка чтения файла')
+      fail('Ошибка чтения файла');
     } else {
-      fail(`Неизвестная ошибка при чтении файла: ${error.message}`)
+      fail(`Неизвестная ошибка при чтении файла: ${error.message}`);
     }
     return
   }
 
   let data
   try {
-    data = JSON.parse(raw)
+    data = JSON.parse(raw);
   } catch (error) {
-    fail('Ошибка разбора JSON')
-    return
+    fail('Ошибка разбора JSON');
+    return;
   }
 
   if (!validateQuizData(data)) {
-    fail('Неверная структура данных')
+    fail('Неверная структура данных');
     return
   }
 
-  const report = calculateReport(data)
-  const html = createReportHtml(report)
+  const report = calculateReport(data);
+  const html = createReportHtml(report);
 
   try {
     await writeFile(outputPath, html, 'utf8')
   } catch (error) {
-    fail('Ошибка записи отчёта')
+    fail('Ошибка записи отчёта');
     return
   }
 
