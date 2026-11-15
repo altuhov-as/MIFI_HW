@@ -56,8 +56,8 @@ function startFilter() {
   // TODO: подпишитесь на submit через addEventListener().
   // В обработчике вызовите preventDefault(), прочитайте value,
   // выберите попытки и замените innerHTML счётчика и списка.
-  const form = document.querySelector('form');
-  const select = document.querySelector('select');
+  const form = document.querySelector('#filter-form');
+  const select = document.querySelector('#select');
 
   // Значение получаю, но ни где не использую
   const count = document.querySelector('#result-count');
@@ -74,4 +74,9 @@ function startFilter() {
 
 }
 
-startFilter()
+// Запуск после загрузки DOM
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startFilter);
+} else {
+  startFilter();
+}
