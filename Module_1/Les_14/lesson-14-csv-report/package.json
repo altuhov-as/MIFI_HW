@@ -1,0 +1,12 @@
+{
+  "name": "order-report",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node starter/app.js starter/orders.csv"
+  },
+  "dependencies": {
+    "csv-parse": "7.0.2"
+  }
+}
